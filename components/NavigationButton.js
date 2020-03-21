@@ -1,26 +1,34 @@
 import React from 'react';
+import colors from '../common/colors';
 
 export const NavigationButton = ({
     href,
     children,
     onClick,
-    isExternalLink,
+    width,
+    height,
+    backgroundColor,
+    textColor,
   }) => (
     <>
       <a
         href={href}
         onClick={onClick}
-        target={isExternalLink ? '_blank' : ''}
-        rel={isExternalLink ? 'noopener noreferrer' : ''}
       >
         {children}
       </a>
       <style jsx>{`
         a {
-          background: transparent;
+          background-color: ${backgroundColor};
+          color: ${textColor};
           display: flex;
-          text-align: center;
           transition: all 0.15s ease;
+          width: ${width}px;
+          height: ${height}px;
+          text-decoration: none;
+          border-radius: 10px;
+          justify-content: center;
+          align-items: center;
         }
         a:hover {
         }
@@ -37,7 +45,7 @@ export const NavigationButton = ({
   );
 
   NavigationButton.defaultProps = {
-    backgroundColor: colors.snBlue,
-    color: colors.white,
+    backgroundColor: colors.purple,
+    textColor: 'white',
     isExternalLink: false,
   };

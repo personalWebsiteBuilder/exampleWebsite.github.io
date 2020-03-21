@@ -1,4 +1,7 @@
 import Head from 'next/head'
+import { Navbar } from '../components/NavBar'
+import { CircularPicture } from '../components/CircularPicture'
+import { NavigationButton } from '../components/NavigationButton'
 
 const Home = () => (
   <div className="container">
@@ -8,6 +11,9 @@ const Home = () => (
     </Head>
 
     <main>
+      <Navbar />
+      <CircularPicture image={"/zeit.svg"} imageActive={"/zeit.svg"} radiusPercent={50}/>
+      <NavigationButton width={150} height={40}>Navigation Button</NavigationButton>
       <h1 className="title">
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
