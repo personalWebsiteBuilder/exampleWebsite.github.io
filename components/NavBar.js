@@ -20,7 +20,7 @@ export const Navbar = () => {
         <>
         <header>
             <div className="container">
-                <div classname="left">
+                <div className="left">
                   <Link href="/">
                     <a className="link" onClick={closeNav}>
                       <span className="link-text">Home</span>
@@ -138,7 +138,7 @@ export const Navbar = () => {
               width: auto;
               padding: 0;
               justify-content: flex-start;
-              margin-left: 40px;
+              margin-left: 70px;
             }
           }
 
