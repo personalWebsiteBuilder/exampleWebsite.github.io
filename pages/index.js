@@ -14,6 +14,9 @@ const Home = () => (
       <Navbar />
       <CircularPicture image={"/zeit.svg"} imageActive={"/zeit.svg"} radiusPercent={50}/>
       <NavigationButton width={150} height={40}>Navigation Button</NavigationButton>
+      
+      {/* Everything below this is default stuff that is not part of the project.  */}
+
       <h1 className="title">
         Welcome to <a href="https://nextjs.org">Next.js!</a>
       </h1>
