@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
+import { NavigationButton } from './NavigationButton';
 import colors from '../common/colors'
 
 export const Navbar = () => {
+
+    const [isNavOpen, setNavIsOpen] = useState(false);
+
+    const toggleNav = () => {
+        setNavIsOpen(!isNavOpen);
+      };
+    
+      const closeNav = () => {
+        if (isNavOpen) setNavIsOpen(false);
+      };
+
     return (
         <>
         <header>
             <div className="container">
-                <Link href="/">
-                    <img />
-                </Link>
               <div className="top-bar">
                 <div className="left">
                   <Link href="/">
@@ -44,7 +53,7 @@ export const Navbar = () => {
             </div>
         </header>
         <style jsx>{`
-        container {
+         header {
             background-color: ${colors.purple};
             margin: 0 auto;
             display: flex;
