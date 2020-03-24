@@ -20,6 +20,7 @@ export const Navbar = () => {
         <>
         <header>
             <div className="container">
+              <div className="top-bar">
                 <div className="left">
                   <Link href="/">
                     <a className="link" onClick={closeNav}>
@@ -34,6 +35,7 @@ export const Navbar = () => {
                     <span className="toggle-bar" />
                     <span className="toggle-bar" />
                 </button>
+              </div>
                 <nav className={isNavOpen ? 'is-open' : null}>
                     <div className="middle">
                         <Link href="/example-websites">
@@ -60,7 +62,7 @@ export const Navbar = () => {
             border: 1px solid transparent;
             position: fixed;
             top: 0;
-            min-height: 50px;
+            min-height: 100px;
         }
 
         @media (min-width: 768px) {
@@ -89,7 +91,7 @@ export const Navbar = () => {
 
         .toggle-button {
             position: relative;
-            padding: 9px 10px;
+            margin-right: 10px;
             background-color: transparent;
             height: 40px;
             width: 40px;
@@ -106,6 +108,9 @@ export const Navbar = () => {
             flex-direction: column;
             align-items: center;
             transition: all 0.6s ease-in-out;
+            max-height: 0;
+            width: 100%;
+            overflow: hidden;
         }
 
         @media (min-width: 768px) {
@@ -115,6 +120,7 @@ export const Navbar = () => {
               max-height: 0;
               width: auto;
               padding-bottom: 0;
+              overflow: visible;
             }
         }
         
@@ -147,13 +153,24 @@ export const Navbar = () => {
           }
 
           .link {
+            display: flex;
             font-size: 25px;
             font-weight: 900;
             color: white;
             margin-top: 10px;
             text-decoration: none;
+            justify-content: center;
           }
 
+          @media (max-width: 768px) {
+            .top-bar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+              height: 100px;
+            }
+          }
         `}</style>
         </>
     )
