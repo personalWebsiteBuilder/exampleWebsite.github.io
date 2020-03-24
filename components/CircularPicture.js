@@ -18,11 +18,11 @@ export const CircularPicture = ({
         target={isExternalLink ? '_blank' : ''}
         className="circularImage"
       />
-      <img
+      {/* <img
       src={image}
       onClick={onClick}
       className="activeImage"
-      />
+      /> */}
       <style jsx>{`
         .circularImage {
             border-radius: ${radiusPercent}%; 

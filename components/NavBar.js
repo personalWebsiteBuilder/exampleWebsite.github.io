@@ -35,7 +35,7 @@ export const Navbar = () => {
                     <span className="toggle-bar" />
                     <span className="toggle-bar" />
                 </button>
-                </div>
+              </div>
                 <nav className={isNavOpen ? 'is-open' : null}>
                     <div className="middle">
                         <Link href="/example-websites">
@@ -120,6 +120,7 @@ export const Navbar = () => {
               max-height: 0;
               width: auto;
               padding-bottom: 0;
+              overflow: visible;
             }
         }
         
@@ -161,12 +162,14 @@ export const Navbar = () => {
             justify-content: center;
           }
 
-          .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            height: 100px;
+          @media (max-width: 768px) {
+            .top-bar {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              width: 100%;
+              height: 100px;
+            }
           }
         `}</style>
         </>
