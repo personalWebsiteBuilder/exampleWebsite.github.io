@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Navbar } from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import { Container } from '../components/Container'
 import { CircularPicture } from '../components/CircularPicture'
 import { NavigationButton } from '../components/NavigationButton'
@@ -12,10 +12,10 @@ const Home = () => (
     </Head>
 
     <main>
-      <Navbar />
+      <NavBar />
       <Container>
         <CircularPicture image={"/zeit.svg"} imageActive={"/zeit.svg"} radiusPercent={50}/>
-        <NavigationButton width={150} height={40}>Navigation Button</NavigationButton>
+        <NavigationButton href="/get-started" width={150} height={40}>Navigation Button</NavigationButton>
       </Container>
       {/* Everything below this is default stuff that is not part of the project.  */}
     </main>

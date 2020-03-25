@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import { NavigationButton } from './NavigationButton';
 import colors from '../common/colors'
 
-export const Navbar = () => {
+export const NavBar = () => {
 
     const [isNavOpen, setNavIsOpen] = useState(false);
 
