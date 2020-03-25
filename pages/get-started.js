@@ -1,8 +1,7 @@
 import Head from 'next/head'
-import { Navbar } from '../components/NavBar'
+import { NavBar } from '../components/NavBar'
 import { Container } from '../components/Container'
 import { CircularPicture } from '../components/CircularPicture'
-import { render } from 'react-dom'
 
 const getStarted = () => (
     <>
@@ -11,7 +10,7 @@ const getStarted = () => (
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-            <Navbar />
+            <NavBar />
             <Container>
                 <CircularPicture />
             </Container>
