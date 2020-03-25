@@ -63,6 +63,7 @@ export const Navbar = () => {
             position: fixed;
             top: 0;
             min-height: 100px;
+            z-index: 1;
         }
 
         @media (min-width: 768px) {
