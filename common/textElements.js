@@ -3,6 +3,7 @@ import React from 'react';
 export const BigTitle = ({
     children,
     fontSize,
+    mobileFontSize,
     textAlign,
     color,
     hasTextShadow,
@@ -27,19 +28,26 @@ export const BigTitle = ({
                 ${marginLeft !== undefined ? `margin-left: ${marginLeft}px` : ''};
                 ${marginRight !== undefined ? `margin-right: ${marginRight}px` : ''};
             }
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: ${mobileFontSize}px;
+                }
+            }
         `}</style>
     </>
 );
 
 BigTitle.defaultProps = {
-    fontSize: 20,
-    color: 'white',
+    fontSize: 22,
+    mobileFontSize: 14,
+    color: 'black',
     textAlign: 'left',
 };
 
 export const LittleTitle = ({
     children,
     fontSize,
+    mobileFontSize,
     textAlign,
     color,
     hasTextShadow,
@@ -63,6 +71,11 @@ export const LittleTitle = ({
                 ${marginBottom !== undefined ? `margin-bottom: ${marginBottom}px` : ''};
                 ${marginLeft !== undefined ? `margin-left: ${marginLeft}px` : ''};
                 ${marginRight !== undefined ? `margin-right: ${marginRight}px` : ''};
+            }
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: ${mobileFontSize}px;
+                }
             }
         `}</style>
     </>
@@ -70,6 +83,7 @@ export const LittleTitle = ({
 
 LittleTitle.defaultProps = {
     fontSize: 16,
+    mobileFontSize: 13,
     color: 'black',
     textAlign: 'left',
 };
@@ -77,6 +91,7 @@ LittleTitle.defaultProps = {
 export const H1 = ({
     children,
     fontSize,
+    mobileFontSize,
     textAlign,
     color,
     hasTextShadow,
@@ -101,12 +116,18 @@ export const H1 = ({
                 ${marginLeft !== undefined ? `margin-left: ${marginLeft}px` : ''};
                 ${marginRight !== undefined ? `margin-right: ${marginRight}px` : ''};
             }
+            @media (max-width: 768px) {
+                h1 {
+                    font-size: ${mobileFontSize}px;
+                }
+            }
         `}</style>
     </>
 );
 
 H1.defaultProps = {
-    fontSize: 12,
+    fontSize: 15,
+    mobileFontSize: 13,
     color: 'black',
     textAlign: 'center',
 };
