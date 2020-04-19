@@ -6,9 +6,12 @@ export const NavigationButton = ({
     children,
     onClick,
     width,
+    mobileWidth,
     height,
+    mobileHeight,
     backgroundColor,
     textColor,
+    borderRadius,
   }) => (
     <>
       <a
@@ -26,7 +29,7 @@ export const NavigationButton = ({
           width: ${width}px;
           height: ${height}px;
           text-decoration: none;
-          border-radius: 10px;
+          border-radius: ${borderRadius}px;
           justify-content: center;
           align-items: center;
         }
@@ -36,8 +39,10 @@ export const NavigationButton = ({
         }
         a:active {
         }
-        @media (max-width: 414px) {
+        @media (max-width: 768px) {
           a {
+            width: ${mobileWidth}px;
+            height: ${mobileHeight}px;
           }
         }
       `}</style>
@@ -48,4 +53,8 @@ export const NavigationButton = ({
     backgroundColor: colors.purple,
     textColor: 'white',
     isExternalLink: false,
+    mobileWidth: 120,
+    mobileHeight: 60,
+    borderRadius: 10,
+
   };
