@@ -164,7 +164,7 @@ export const BodyText = ({
 );
 
 BodyText.defaultProps = {
-    fontSize: 20,
-    color: 'white',
+    fontSize: 22,
+    color: 'black',
     textAlign: 'left',
 };
