@@ -2,7 +2,6 @@ import React from 'react';
 
 export const CircularPicture = ({
     image,
-    imageActive,
     width,
     height,
     href,

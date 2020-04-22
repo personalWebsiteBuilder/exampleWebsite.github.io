@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { NavBar } from '../components/NavBar'
 import { Container } from '../components/Container'
 import { NavigationButton } from '../components/NavigationButton'
-import { BigTitle, H1, LittleTitle } from '../common/textElements'
+import { BigTitle, H1, LittleTitle, BodyText } from '../common/textElements'
 
 const Home = () => (
   <div className="container">
@@ -15,40 +15,44 @@ const Home = () => (
 
     <main>
       <NavBar />
-      <div className="TopRow">
+      <div className="topRow">
       <Container>
-        <div className="Row">
-          <div className="Column">
-            <BigTitle marginTop={0}>Get ahead of the game.</BigTitle>
-            <BigTitle marginTop={0}>Step up your professional identity.</BigTitle>
-            <BigTitle marginTop={0}>It's time to show employers what you are made of.</BigTitle>
+          <div className="column">
+            <BigTitle marginTop={0} marginBottom={0} fontSize={50} mobileFontSize={25} color="white">professional sites in</BigTitle>
+            <BigTitle marginTop={0} marginBottom={0} fontSize={138} mobileFontSize={60} color="white">three clicks.</BigTitle>
+            <BigTitle marginTop={0} marginBottom={54} fontSize={35} mobileFontSize={17} color="white">(we'll handle the hard stuff)</BigTitle>
+            <NavigationButton href="/get-started" width={244} height={58} borderRadius={5} mobileWidth={150}>
+              <H1 color="black">Make My Site For Me</H1>
+            </NavigationButton>
+            <div className="subText">
+              <LittleTitle color="white">(hey you! I’ll tell you more - just scroll down)</LittleTitle>
+            </div>
           </div>
-          <div className="ColumnCentered">
-            <NavigationButton href="/get-started" width={300} height={50} borderRadius={25}>
-              <H1 color="white">Make my website for me</H1></NavigationButton>
-          </div>
-        </div>
       </Container>
       </div>
-      <div className="UploadContainer">
+      <div className="uploadContainer">
       <Container>
         <div className="Row">
-          <div className="resumeProfileBlastoff">
-            <img src="/homeGenericResume.jpg" height="120" width="120" />
-            <BigTitle>+</BigTitle>
-            <img src="/homeGenericProfilePic.png" height="120" width="120" />
-            <BigTitle>=</BigTitle>
-            <img src="/homeComputerRocket.jpg" height="200" width="200" />
-          </div>
-          <div className="Column">
-            <div className="UploadText">
-            <LittleTitle >
-              Upload your resume and a profile picture and boom, you've got your personal website fully filled out.
-              Three clicks and done!<br /><br />You've looked into or heard about generic 
-              website builders but still haven't made one so build your professional identity here; quick, easy, and constantly 
-              coming out with new features tailored to your desires.
-              </LittleTitle>
+          <div className="columnCentered">
+            <div className="uploadTextContainer">
+              <BigTitle>you want to impress. let us help you get there.</BigTitle>
+              <LittleTitle>it’s time to show employers what you’re made of.</LittleTitle>
             </div>
+            <div className="stepsRow">
+              <div className="step">
+                <div className="rectangle1"></div>
+                <BodyText>upload your resume</BodyText>
+              </div>
+              <div className="step">
+                <div className="rectangle2"></div>
+                <BodyText>upload your headshot</BodyText>
+              </div>
+              <div className="step">
+                <div className="rectangle3"></div>
+                <BodyText>show off your site</BodyText>
+              </div>
+            </div>
+
           </div>
         </div>
         </Container>
@@ -56,58 +60,96 @@ const Home = () => (
     </main>
 
     <style jsx>{`
-      .TopRow {
+      .topRow {
         flex: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        padding-top: 130px;
-        padding-bottom: 40px;
+        padding-top: 300px;
+        padding-bottom: 15px;
+        background-color: blue;
+      }
+      @media (max-width: 768px) {
+        .topRow {
+          padding-top: 200px;
+          padding-bottom: 15px;
+          background-color: blue;
+        }
       }
       .Row {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
       }
-      .Column,
-      .ColumnCentered {
+      .column,
+      .columnCentered {
         display: flex;
         justify-content: center;
         flex-direction: column;
       }
-      .ColumnCentered {
+      .columnCentered {
         align-items: center;
       }
       @media (max-width: 768px) {
-        .Column,
-        .ColumnCentered {
+        .column,
+        .columnCentered {
           min-width: unset;
         }
       }
-      .UploadContainer {
+      .subText {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 75px;
+      }
+      @media (max-width: 768px) {
+        .subText {
+          margin-top: 40px;
+        }
+      }
+      .uploadContainer {
         padding-top: 30px;
         padding-bottom: 30px;
         background-color: #F6F7F9;
       }
-      .resumeProfileBlastoff {
-        width: 450px;
+      .uploadTextContainer {
+        margin-bottom: 120px
+      }
+      @media (max-width: 768px) {
+        .uploadTextContainer {
+          margin-bottom: 40px
+        }
+      }
+      .stepsRow {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .step {
+        margin-left: 90px;
+        margin-right: 90px;
       }
       @media (max-width: 768px) {
-        .resumeProfileBlastoff {
-          flex-direction: column;
+        .step {
+          margin-right: unset;
+          margin-left: unset;
         }
       }
-      .UploadText {
-        min-width: 400px;
+      .rectangle1,
+      .rectangle2,
+      .rectangle3 {
+        width: 131px;
+        height: 131px;
+        background-color: lightBlue;
       }
-      @media (max-width: 768px) {
-        .UploadText {
-          min-width: unset;
-        }
+      .rectangle1 {
+        transform: rotate(-21deg);
+      }
+      .rectangle2 {
+        transform: rotate(-80deg);
+      }
+      .rectangle3 {
+        transform: rotate(-100deg);
       }
     `}</style>
 

@@ -50,8 +50,8 @@ export const NavigationButton = ({
   );
 
   NavigationButton.defaultProps = {
-    backgroundColor: colors.purple,
-    textColor: 'white',
+    backgroundColor: 'white',
+    textColor: 'black',
     isExternalLink: false,
     mobileWidth: 120,
     mobileHeight: 60,

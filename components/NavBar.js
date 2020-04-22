@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import colors from '../common/colors'
+import {NavigationButton} from './NavigationButton';
+import { LittleTitle } from '../common/textElements';
 
 export const NavBar = () => {
 
@@ -22,8 +23,8 @@ export const NavBar = () => {
               <div className="top-bar">
                 <div className="left">
                   <Link href="/">
-                    <a className="link" onClick={closeNav}>
-                      <span className="link-text">Home</span>
+                    <a className="link-large" onClick={closeNav}>
+                      <span className="link-text">MeetMe</span>
                     </a>
                 </Link>
                 </div>
@@ -37,23 +38,40 @@ export const NavBar = () => {
               </div>
                 <nav className={isNavOpen ? 'is-open' : null}>
                     <div className="middle">
+                        <Link href="/products">
+                            <a className="link" onClick={closeNav}>
+                                <span className="link-text">Products</span>
+                            </a>
+                        </Link>
                         <Link href="/example-websites">
                             <a className="link" onClick={closeNav}>
-                                <span className="link-text">Why us?</span>
+                                <span className="link-text">Templates</span>
                             </a>
                         </Link>
-                        <Link href="/get-started">
+                        <Link href="/support">
                             <a className="link" onClick={closeNav}>
-                                <span className="link-text">Get started!</span>
+                                <span className="link-text">Support</span>
                             </a>
                         </Link>
+                        <Link href="/login">
+                            <a className="link" onClick={closeNav}>
+                                <span className="link-text">Log in</span>
+                            </a>
+                        </Link>
+                        <a className="link" onClick={closeNav}>
+                          <NavigationButton href="/get-started" width={177} height={58} borderRadius={5}>
+                              <LittleTitle fontSize={20}>
+                                  <span className="link-text">Get started!</span>
+                              </LittleTitle>
+                          </NavigationButton>
+                        </a>
                     </div>
                 </nav>
             </div>
         </header>
         <style jsx>{`
          header {
-            background-color: ${colors.purple};
+            background-color: transparent;
             margin: 0 auto;
             display: flex;
             width: 100%;
@@ -63,11 +81,13 @@ export const NavBar = () => {
             top: 0;
             min-height: 100px;
             z-index: 1;
-        }
+            position: absolute;
+          }
 
         @media (min-width: 768px) {
             header {
               min-height: 60px;
+              padding-top: 35px;
             }
           }
 
@@ -79,15 +99,16 @@ export const NavBar = () => {
             align-items: center;
             justify-content: space-between;
             overflow: hidden;
-        }
-
-        @media (min-width:768px) {
+          }
+          
+          @media (min-width:768px) {
             .container {
-                min-height: 60px;
-                flex-direction: row;
-                justify-content: space-between
+              min-height: 60px;
+              flex-direction: row;
+              justify-content: space-between
+              align-items: center;
               }
-        }
+          }
 
         .toggle-button {
             position: relative;
@@ -130,6 +151,13 @@ export const NavBar = () => {
             padding-bottom: 5px;
           }
 
+          @media (min-width: 768px) {
+            .left {
+              margin-top: -10px;
+              padding-left: 39px;
+            }
+          }
+
           .middle {
             display: flex;
             flex-direction: column;
@@ -142,9 +170,9 @@ export const NavBar = () => {
               flex: 1;
               flex-direction: row;
               width: auto;
-              padding: 0;
-              justify-content: flex-start;
+              justify-content: space-around;
               margin-left: 70px;
+              align-items: center;
             }
           }
 
@@ -152,10 +180,16 @@ export const NavBar = () => {
             margin: 10px;
           }
 
+          .link-large {
+            font-size: 51px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+          }
+
           .link {
             display: flex;
-            font-size: 25px;
-            font-weight: 900;
+            font-size: 20px;
             color: white;
             margin-top: 10px;
             text-decoration: none;
