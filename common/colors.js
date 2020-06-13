@@ -1,4 +1,3 @@
-
 export default {
-    purple: '#6a00ff',
-}
+  purple: "#6a00ff",
+};

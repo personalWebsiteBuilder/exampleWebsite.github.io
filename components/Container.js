@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const Container = ({
   children,
@@ -17,19 +17,19 @@ export const Container = ({
 }) => (
   <>
     <div className="container">
-      <div className={isFluid ? 'child-fluid' : 'child'}>{children}</div>
+      <div className={isFluid ? "child-fluid" : "child"}>{children}</div>
       {directChildren}
     </div>
 
     <style jsx>{`
       .container {
         background-color: ${backgroundColor};
-        ${backgroundImage ? `background-image: ${backgroundImage};` : ''}
-        ${backgroundImage ? 'background-size: cover;' : ''}
-        ${backgroundImage ? 'background-position-x: 50%;' : ''}
-        ${background ? `background: ${background};` : ''}
+        ${backgroundImage ? `background-image: ${backgroundImage};` : ""}
+        ${backgroundImage ? "background-size: cover;" : ""}
+        ${backgroundImage ? "background-position-x: 50%;" : ""}
+        ${background ? `background: ${background};` : ""}
         position: relative;
-        ${liftZIndex ? `z-index: 1;` : ''}
+        ${liftZIndex ? `z-index: 1;` : ""}
         margin: auto;
       }
       @media (max-width: 767px) {
@@ -46,7 +46,7 @@ export const Container = ({
         margin-left: auto;
         margin-top: ${marginTop}px;
         margin-bottom: ${marginBottom}px;
-        ${maxWidth !== undefined ? `max-width: ${maxWidth}px;` : ''}
+        ${maxWidth !== undefined ? `max-width: ${maxWidth}px;` : ""}
       }
       @media (min-width: 768px) {
         .child {
@@ -84,5 +84,5 @@ Container.defaultProps = {
   paddingBottom: 0,
   paddingRight: 15,
   isFluid: false,
-  backgroundColor: 'transparent',
+  backgroundColor: "transparent",
 };
