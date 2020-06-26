@@ -5,12 +5,13 @@ import { Container } from "../components/Container";
 import { CircularPicture } from "../components/CircularPicture";
 import { NavigationButton } from "../components/NavigationButton";
 
-export default function getStarted({ user }) {
+export default function getStarted() {
   return (
     <>
       <Head>
         <title>Get started</title>
       </Head>
+
       <main>
         <NavBar />
         <Container>
@@ -45,14 +46,4 @@ export default function getStarted({ user }) {
         `}</style>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/templates");
-  const user = await res.json();
-  return {
-    props: {
-      user,
-    },
-  };
 }
