@@ -9,8 +9,7 @@ import { BigTitle, H1, LittleTitle, BodyText } from '../common/textElements'
 const Home = () => (
   <div className="container">
     <Head>
-      <title>Create Next App</title>
-      <link rel="icon" href="/favicon.ico" />
+      <title>MeetMe</title>
     </Head>
 
     <main>
