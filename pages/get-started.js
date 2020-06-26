@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from "next/head";
 
 import { NavBar } from "../components/NavBar";
 import { Container } from "../components/Container";
@@ -44,7 +44,8 @@ export default function getStarted({ user }) {
           }
         `}</style>
     </>
-);
+  );
+}
 
 export async function getStaticProps() {
   const res = await fetch("http://localhost:3000/api/templates");
