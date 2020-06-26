@@ -1,21 +1,31 @@
-import Head from 'next/head'
-import { NavBar } from '../components/NavBar'
-import { Container } from '../components/Container'
-import { CircularPicture } from '../components/CircularPicture'
+import Head from "next/head";
 
-const getStarted = () => (
+import { NavBar } from "../components/NavBar";
+import { Container } from "../components/Container";
+import { CircularPicture } from "../components/CircularPicture";
+import { NavigationButton } from "../components/NavigationButton";
+
+export default function getStarted() {
+  return (
     <>
-        <Head>
-            <title>Create Next App</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-        <main>
-            <NavBar />
-            <Container>
-                <CircularPicture />
-            </Container>
-        </main>
-        <style>{`
+      <Head>
+        <title>Get started</title>
+      </Head>
+
+      <main>
+        <NavBar />
+        <Container>
+          <CircularPicture />
+          <NavigationButton
+            width={244}
+            height={58}
+            borderRadius={5}
+            mobileWidth={150}
+            href="/template1"
+          />
+        </Container>
+      </main>
+      <style>{`
         main {
             padding: 5rem 0;
             flex: 1;
@@ -35,6 +45,5 @@ const getStarted = () => (
           }
         `}</style>
     </>
-);
-
-export default getStarted;
+  );
+}
