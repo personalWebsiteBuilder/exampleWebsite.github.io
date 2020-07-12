@@ -5,7 +5,7 @@ const url = process.env.MONGODB_URI;
 
 const client = new MongoClient(url);
 
-export default async (req, res) => {
+export async function userInfo() {
   try {
     await client.connect();
     console.log("Connected correctly to server");
@@ -13,13 +13,12 @@ export default async (req, res) => {
     console.log("found db");
     const col = db.collection("users");
     console.log("collection found");
-    const User = await col.findOne({ email: "gerstley.h@northeastern.edu" });
-    // console.log(User, "ALL USER");
-    res.status(200).send(User);
+    const response = await col.findOne({ email: "gerstley.h@northeastern.edu" });
+    return response;
   } catch (err) {
     console.log(err);
-    res.status(400);
+    throw err;
   } finally {
     await client.close();
   }
-};
+}

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import fetch from "node-fetch";
+import { userInfo } from "./api/templates/index"
 
 import { Container } from "../components/Container";
 import { CircularPicture } from "../components/CircularPicture";
@@ -83,9 +83,15 @@ export default function template1({ user }) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("http://localhost:3000/api/templates");
-  const user = await res.json();
+export async function getServerSideProps() {
+  const user = await userInfo();
+  Object.keys(user).forEach(key => {
+    let value = user[key];
+    if (key === "_id" || key === "dateStarted") {
+      value = value.toString();
+    }
+    user[key] = value;
+  });
   return {
     props: {
       user,
