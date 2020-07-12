@@ -38,22 +38,22 @@ export const NavBar = () => {
               </div>
                 <nav className={isNavOpen ? 'is-open' : null}>
                     <div className="middle">
-                        <Link href="/products">
+                        <Link href="/">
                             <a className="link" onClick={closeNav}>
                                 <span className="link-text">Products</span>
                             </a>
                         </Link>
-                        <Link href="/example-websites">
+                        <Link href="/template1">
                             <a className="link" onClick={closeNav}>
                                 <span className="link-text">Templates</span>
                             </a>
                         </Link>
-                        <Link href="/support">
+                        <Link href="/">
                             <a className="link" onClick={closeNav}>
                                 <span className="link-text">Support</span>
                             </a>
                         </Link>
-                        <Link href="/login">
+                        <Link href="/">
                             <a className="link" onClick={closeNav}>
                                 <span className="link-text">Log in</span>
                             </a>
