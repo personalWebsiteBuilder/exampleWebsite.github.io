@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { userInfo } from "./api/templates/index"
+import { userInfo } from "./api/templates/index";
 
 import { Container } from "../components/Container";
 import { CircularPicture } from "../components/CircularPicture";
@@ -65,11 +65,39 @@ export default function template1({ user }) {
             margin-top: 170px;
           }
 
+          .resume {
+            margin-top: 150px;
+            margin-bottom: 10px;
+          }
+
           .bio {
+            display: flex;
+            justify-content: center;
             width: 100%;
             background-color: #B45353;
           }
+
+          .sectionTitle {
+            width: 1000px;
+          }
+
+          .subsection {
+            display: flex;
+            justify-content: space-between;
+            width: 1000px
+          }
     
+          .redBar {
+            background-color: #B45353;
+            width: 10px;
+            // margin-left: 10px;
+            // margin-right: 10px;
+          }
+
+          .sectionText {
+            width: 960px;
+          }
+
           footer {
             // width: 100%;
             // height: 100px;
@@ -85,7 +113,7 @@ export default function template1({ user }) {
 
 export async function getServerSideProps() {
   const user = await userInfo();
-  Object.keys(user).forEach(key => {
+  Object.keys(user).forEach((key) => {
     let value = user[key];
     if (key === "_id" || key === "dateStarted") {
       value = value.toString();
@@ -101,7 +129,7 @@ export async function getServerSideProps() {
 
 function getSections(sections) {
   return sections.map((sectionItem) => (
-    <div key={sectionItem}>
+    <div className="sectionTitle" key={sectionItem}>
       <BigTitle fontSize={100}>{sectionItem.title}</BigTitle>
       {getSubsections(sectionItem)}
     </div>
@@ -110,12 +138,17 @@ function getSections(sections) {
 
 function getSubsections(sectionItem) {
   return sectionItem.subsections.map((subsection) => (
-    <div key={subsection}>
+    <div>
       <BigTitle fontSize={30}>{subsection.title}</BigTitle>
-      <LittleTitle fontSize={30}>{subsection.subtitle}</LittleTitle>
-      {subsection.description && getDescription(subsection.description)}
-      {subsection.list && getList(subsection.list)}
-      {subsection.attribute && getAttribute(subsection.attribute)}
+      <div className="subsection">
+        <div className="redBar"></div>
+        <div className="sectionText" key={subsection}>
+          <LittleTitle fontSize={30}>{subsection.subtitle}</LittleTitle>
+          {subsection.description && getDescription(subsection.description)}
+          {subsection.list && getList(subsection.list)}
+          {subsection.attribute && getAttribute(subsection.attribute)}
+        </div>
+      </div>
     </div>
   ));
 }
