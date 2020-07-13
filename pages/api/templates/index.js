@@ -13,7 +13,7 @@ export async function userInfo() {
     console.log("found db");
     const col = db.collection("users");
     console.log("collection found");
-    const response = await col.findOne({ email: "gerstley.h@northeastern.edu" });
+    const response = await col.findOne({ email: "user@domain.com" });
     return response;
   } catch (err) {
     console.log(err);
