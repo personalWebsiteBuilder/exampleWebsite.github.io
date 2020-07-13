@@ -1,9 +1,10 @@
-import React from 'react';
+import React from "react";
 
 export const BigTitle = ({
   children,
   fontSize,
   fontFamily,
+  fontWeight,
   mobileFontSize,
   textAlign,
   color,
@@ -21,6 +22,7 @@ export const BigTitle = ({
       h1 {
         font-family: ${fontFamily};
         font-size: ${fontSize}px;
+        ${fontWeight ? `font-weight: ${fontWeight};` : ""};
         text-align: ${textAlign};
         color: ${color};
         text-shadow: ${hasTextShadow ? "0 4px 4px rgba(0, 0, 0, 0.2)" : "none"};
@@ -51,12 +53,15 @@ BigTitle.defaultProps = {
   mobileFontSize: 14,
   color: "black",
   textAlign: "left",
+  marginTop: 0,
+  marginBottom: 0,
 };
 
 export const LittleTitle = ({
   children,
   fontSize,
   fontFamily,
+  fontWeight,
   mobileFontSize,
   textAlign,
   color,
@@ -74,6 +79,7 @@ export const LittleTitle = ({
       h1 {
         font-family: ${fontFamily};
         font-size: ${fontSize}px;
+        ${fontWeight ? `font-weight: ${fontWeight};` : ""};
         text-align: ${textAlign};
         color: ${color};
         text-shadow: ${hasTextShadow ? "0 4px 4px rgba(0, 0, 0, 0.2)" : "none"};
@@ -103,6 +109,8 @@ LittleTitle.defaultProps = {
   mobileFontSize: 13,
   color: "black",
   textAlign: "left",
+  marginTop: 0,
+  marginBottom: 0,
 };
 
 export const H1 = ({
@@ -155,12 +163,15 @@ H1.defaultProps = {
   mobileFontSize: 13,
   color: "black",
   textAlign: "center",
+  marginTop: 0,
+  marginBottom: 0,
 };
 
 export const BodyText = ({
   children,
   fontSize,
   fontFamily,
+  fontWeight,
   textAlign,
   color,
   hasTextShadow,
@@ -177,6 +188,7 @@ export const BodyText = ({
       p {
         font-family: ${fontFamily};
         font-size: ${fontSize}px;
+        ${fontWeight ? `font-weight: ${fontWeight};` : ""};
         text-align: ${textAlign};
         color: ${color};
         text-shadow: ${hasTextShadow ? "0 4px 4px rgba(0, 0, 0, 0.2)" : "none"};
@@ -200,4 +212,6 @@ BodyText.defaultProps = {
   fontFamily: "Circular",
   color: "black",
   textAlign: "left",
+  marginTop: 0,
+  marginBottom: 0,
 };
